@@ -1,111 +1,73 @@
 "use client";
-
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 
-const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+export default function Home() {
+  const [destination, setDestination] = useState("");
+  const [date, setDate] = useState("");
+  const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-    setSuccess(null);
+    setMessage("");
 
     try {
-      const res = await fetch("/api/send-email", {
+      const response = await fetch("/api/send-selection", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, destination, date }),
       });
 
-      if (res.ok) {
-        setSuccess("Message sent successfully!");
-        setName("");
-        setEmail("");
-        setMessage("");
+      const data = await response.json();
+      if (data.success) {
+        setMessage("تم إرسال اختيارك إلى الموزع!");
       } else {
-        setError("Failed to send message.");
+        setMessage("فشل في إرسال اختيارك.");
       }
-    } catch (err) {
-      setError("Something went wrong.");
-    } finally {
-      setLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+      setMessage("حدث خطأ أثناء إرسال اختيارك.");
     }
+    setLoading(false);
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-gradient-to-tr from-gray-900 via-purple-900 to-black p-10 w-[90%] md:w-2/3 lg:w-1/2 
-      shadow-2xl mx-auto rounded-xl transition-transform duration-300 transform hover:scale-105"
+      className="bg-white bg-opacity-80 shadow-lg rounded-lg p-8 w-full 
+    max-w-lg mx-auto transition-all duration-500 transform hover:scale-105"
     >
-      <h2 className="text-[2.5rem] font-bold mb-8 text-right text-yellow-300 drop-shadow-lg">
-        تواصل معنا
+      <h2 className="text-3xl font-bold text-center text-yellow-950 mb-6">
+        يرجى اختيار الوجهة والتاريخ
       </h2>
-
-      <div className="mb-6">
-        <label className="text-[1.2rem] font-semibold block text-yellow-200 mb-3 text-right">
-          الاسم
-        </label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="w-full px-5 py-3 text-gray-100 bg-black bg-opacity-60 border border-gray-500 
-          rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300"
-        />
-      </div>
-
-      <div className="mb-6">
-        <label className="text-[1.2rem] font-semibold block text-yellow-200 mb-3 text-right">
-          الايميل
-        </label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-5 py-3 text-gray-100 bg-black bg-opacity-60 border border-gray-500 
-          rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300"
-        />
-      </div>
-
-      <div className="mb-6">
-        <label className="text-[1.2rem] font-semibold block text-yellow-200 mb-3 text-right">
-          الرسالة
-        </label>
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="w-full px-5 py-3 text-gray-100 bg-black bg-opacity-60 border border-gray-500 
-          rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition duration-300"
-          rows="5"
-        />
-      </div>
-
-      {error && <p className="text-red-500">{error}</p>}
-      {success && <p className="text-green-500">{success}</p>}
-
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-yellow-500 text-black font-bold text-xl w-full py-3 rounded-lg hover:bg-yellow-600 
-        transition-colors duration-300 hover:shadow-lg focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50"
+      <input
+        type="text"
+        placeholder="أدخل اسم المستخدم"
+        className="w-full px-4 py-2 mb-4 border-b-2 border-yellow-400 
+        bg-transparent focus:outline-none focus:ring-2 focus:ring-yellow-500 
+        text-lg text-right text-richBlack"
+      />
+      <select
+        className="w-full px-2 py-2 mb-4 border-b-2 border-yellow-400 
+      bg-transparent focus:outline-none focus:ring-2 focus:ring-yellow-500 
+      text-lg text-right text-richBlack"
       >
-        {loading ? "Sending..." : "إرسال"}
+        <option>اختر الوجهة</option>
+        <option value="دبي">دبي</option>
+        <option value="تونس">تونس</option>
+        <option value="تركيا">تركيا</option>
+      </select>
+      <input
+        type="date"
+        className="w-full py-2 mb-4 border-b-2 border-yellow-400 bg-transparent 
+        focus:outline-none focus:ring-2 focus:ring-yellow-500 text-lg text-right text-richBlack"
+      />
+      <button className="w-full py-3 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-xl font-bold text-black transition-all duration-300 shadow-lg hover:shadow-xl">
+        إرسال
       </button>
     </form>
   );
-};
-
-export default ContactForm;
+}

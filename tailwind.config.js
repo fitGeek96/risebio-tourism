@@ -11,6 +11,10 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         priceColor: "#ffff82",
+        yellowSolar: " #fbff00 ",
+        snow: "#FFFBFF",
+        murrey: "#870058",
+        richBlack: "#071F29",
       },
     },
     screens: {

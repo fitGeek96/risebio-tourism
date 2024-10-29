@@ -1,21 +1,23 @@
 const Hero = () => {
   return (
     <section
-      id="#hero"
-      className="rakkas-regular bg-cover bg-no-repeat bg-center h-screen text-white parallax"
+      id="hero"
+      className="ruwudu-regular relative h-screen flex items-center justify-center bg-cover bg-center text-white"
+      style={{ backgroundImage: "url('/images/adventure-bg.jpg')" }}
     >
-      <div className="h-full flex flex-col justify-center items-center">
-        <h1 className="text-[6rem] font-bold text-center">
-          اكتشف جمال الجزائر
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="relative z-10 text-center">
+        <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
+          تجارب لا تُنسى <br /> ومغامرات خرافية تأسر القلوب
         </h1>
-        <p className="mt-4 text-[2rem]">
-          اكتشف عروضنا السياحية المحلية الحصرية
+        <p className="my-6 text-xl md:text-2xl text-gray-200">
+          اكتشف عروضنا السياحية المحلية و العالمية
         </p>
         <a
           href="#packages"
-          className="fustat-offer mt-8 bg-yellow-500 px-6 py-3 rounded"
+          className="inline-block mt-8 bg-yellow-500 hover:bg-yellow-600 px-8 py-4 text-xl font-semibold rounded transition-all duration-300 shadow-lg hover:shadow-xl animate-bounce"
         >
-          <span className="text-[2rem] font-medium">تصفح العروض</span>
+          تصفح العروض
         </a>
       </div>
     </section>
