@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 2s infinite",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -15,6 +23,7 @@ module.exports = {
         snow: "#FFFBFF",
         murrey: "#870058",
         richBlack: "#071F29",
+        bleuCiel: "#05a7fa",
       },
     },
     screens: {

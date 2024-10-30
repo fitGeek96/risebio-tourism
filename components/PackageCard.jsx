@@ -44,7 +44,7 @@ const PackageCard = ({ title, description, price, image }) => {
               className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold 
             text-lg px-4 py-2 rounded transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
-              ... المزيد من المعلومات
+              احجز الان
             </button>
           </Link>
         </div>

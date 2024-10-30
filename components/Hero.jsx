@@ -7,9 +7,17 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="relative z-10 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight animate-fade-in-up">
-          تجارب لا تُنسى <br /> ومغامرات خرافية تأسر القلوب
+        <h1
+          className="text-5xl md:text-6xl sm:text-[1.2rem] font-bold leading-tight 
+    animate-fade-in-up py-8 px-[2rem]"
+        >
+          <p className="mt-10">
+            {" "}
+            رحلات <span className="text-yellowSolar">لا تُنسى</span>{" "}
+          </p>
+          <p className="mt-2"> ومغامرات خرافية تأسر القلوب</p>
         </h1>
+
         <p className="my-6 text-xl md:text-2xl text-gray-200">
           اكتشف عروضنا السياحية المحلية و العالمية
         </p>
