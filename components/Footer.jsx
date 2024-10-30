@@ -2,7 +2,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="fustat-offer bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white py-12">
+    <footer
+      className="fustat-offer bg-gradient-to-b from-gray-900 via-gray-800
+     to-black text-white py-12 z-[999]"
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap justify-between items-start text-left">
           {/* Logo and Description */}

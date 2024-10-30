@@ -16,7 +16,8 @@ const Navbar = () => {
           <img
             src="/images/logo.png"
             alt="Agency Logo"
-            className="h-12 w-12 md:h-16 md:w-16 transition-transform duration-300 hover:scale-110"
+            className="h-12 w-12 md:h-16 md:w-16 transition-transform duration-300 
+            hover:scale-110 scale-[2.5]"
           />
         </Link>
 
@@ -41,7 +42,7 @@ const Navbar = () => {
             الرحلات
           </Link>
           <Link
-            href="/#about"
+            href="/aboutUs"
             className="hover:text-yellow-300 transition-colors duration-200"
           >
             من نحن
@@ -71,6 +72,7 @@ const Navbar = () => {
           <Link
             href="/"
             className="hover:text-yellow-300 transition-colors duration-200"
+            onClick={toggleMenu}
           >
             الرئيسية
           </Link>
@@ -89,7 +91,7 @@ const Navbar = () => {
             الرحلات
           </Link>
           <Link
-            href="/#about"
+            href="/aboutUs"
             className="hover:text-yellow-300"
             onClick={toggleMenu}
           >
