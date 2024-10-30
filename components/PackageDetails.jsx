@@ -23,9 +23,9 @@ const PackageDetails = ({ title, description, price, image }) => {
 
         {/* Content Section */}
         <div className="p-6 md:p-8 bg-richBlack">
-          <p className="text-[1.5rem] md:text-[2rem] font-semibold text-snow text-center mb-4 drop-shadow-md tracking-wide">
+          {/* <p className="text-[1.5rem] md:text-[2rem] font-semibold text-snow text-center mb-4 drop-shadow-md tracking-wide">
             {price} DA
-          </p>
+          </p> */}
           <div className="text-center mb-4">
             <h2 className="text-[1.6rem] md:text-[2rem] font-bold text-white mb-2">
               طريقة الدفع:

@@ -12,7 +12,7 @@ const packages = [
     title: "جولة سياحية الى تونس",
     description:
       "Explore the rich history of Tlemcen with a guided tour of its ancient sites.",
-    image: "/images/slide1.jpg",
+    image: "/images/slide3.jpg",
     price: "5000",
   },
   {
@@ -26,7 +26,7 @@ const packages = [
     title: "رحلة الى دبي ",
     description:
       "Discover the modern and traditional sides of Tlemcen in this city tour.",
-    image: "/images/slide3.jpg",
+    image: "/images/slide1.jpg",
     price: "4000",
   },
 ];

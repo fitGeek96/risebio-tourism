@@ -19,20 +19,17 @@ const PackageCard = ({ title, description, price, image }) => {
       </div>
 
       {/* Content Section */}
-      <div
-        className="p-5 bg-gradient-to-r from-richBlack via-transparent to-richBlack 
-      text-right"
-      >
+      <div className="p-5 bg-gradient-to-r from-richBlack via-transparent to-richBlack text-center">
         <h3
           className="text-2xl font-extrabold mb-3 text-yellow-400 leading-tight 
         drop-shadow-lg"
         >
           {title}
         </h3>
-        <div className="flex justify-between items-center mt-4">
-          <span className="text-xl font-semibold text-gray-100">
+        <div className="mt-4">
+          {/* <span className="text-xl font-semibold text-gray-100">
             {price} DZD
-          </span>
+          </span> */}
           <Link
             href={{
               pathname: "/package",
@@ -41,7 +38,7 @@ const PackageCard = ({ title, description, price, image }) => {
             passHref
           >
             <button
-              className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold 
+              className=" bg-yellow-500 hover:bg-yellow-600 text-black font-bold 
             text-lg px-4 py-2 rounded transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               احجز الان
