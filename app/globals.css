@@ -2,47 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #ededed;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: url("https://videos.pexels.com/video-files/5057512/5057512-hd_1920_1080_25fps.mp4");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: auto;
-}
-
-/* Define a custom text-shadow class */
-.text-shadow {
-  @apply text-yellow-400; /* Use Tailwind text color utility */
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6); /* Define your shadow */
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out forwards;
+  background: url("/public/images/paris.jpg") cover;
 }

@@ -33,22 +33,9 @@ const packages = [
 
 export default function Home() {
   return (
-    <div className="bg-richBlack">
-      <video
-        className="absolute w-full h-full object-cover z-0"
-        src="https://videos.pexels.com/video-files/5057526/5057526-uhd_2560_1440_25fps.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-      ></video>
+    <div className="bg-[url(/images/paris.jpg)] bg-cover">
       {/* Overlay Layer */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-400 via-teal-300 to-transparent opacity-50 z-5"></div>
-      {/* Navbar and Hero with z-10 to appear above video */}
-      <div className="relative z-10">
-        {/* <Navbar /> */}
-        {/* <Hero /> */}
-      </div>
+
       {/* <Services /> */}
       {/* <section
         id="packages"
