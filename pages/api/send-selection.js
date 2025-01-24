@@ -2,12 +2,12 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { username, destination, date } = req.body;
+    const { fullName, numTel, level } = req.body;
 
-    if (!destination || !date || !username) {
+    if (!level || !numTel || !fullName) {
       return res.status(400).json({
         success: false,
-        message: "اسم المستخدم الوجهة والتاريخ مطلوبة",
+        message: "ضروري ادخال الاسم و اللقب و المستوى",
       });
     }
 
@@ -20,22 +20,22 @@ export default async function handler(req, res) {
           user: process.env.GMAIL_USER, // Your Gmail user
           pass: process.env.GMAIL_PASS, // Your Gmail password
         },
+        tls: {
+          rejectUnauthorized: false, // Allows self-signed certificates (not recommended for production)
+        },
       });
 
       let mailOptions = {
         from: process.env.GMAIL_USER,
         to: "fitgeek96@gmail.com", // Replace with distributor's email
-        subject: `Nouvelle sélection de voyages : ${destination}`,
+        subject: `Nouvelle Inscription`,
         text: `
-        Travel Selection Details
+        Inscription Details
         
-        A client has selected the following details:
+        - Nom & Prenom: ${fullName}
+        - Numero de Tel: ${numTel}
+        - Niveau actuel: ${level}
         
-        - Username: ${username}
-        - Destination: ${destination}
-        - Date: ${date}
-        
-        Please take the necessary action.
           `,
       };
 

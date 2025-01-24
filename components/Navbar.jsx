@@ -22,7 +22,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-yellow-500">
+        {/* <div className="hidden md:flex space-x-8 text-yellow-500">
           <Link
             href="/"
             className="hover:text-yellow-300 transition-colors duration-200"
@@ -53,7 +53,7 @@ const Navbar = () => {
           >
             تواصل معنا
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Hamburger Menu Button */}
         <div className="md:hidden">
@@ -69,7 +69,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-black bg-opacity-90 absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center space-y-6 text-white text-xl">
-          <Link
+          {/* <Link
             href="/"
             className="hover:text-yellow-300 transition-colors duration-200"
             onClick={toggleMenu}
@@ -103,7 +103,7 @@ const Navbar = () => {
             onClick={toggleMenu}
           >
             تواصل معنا
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>

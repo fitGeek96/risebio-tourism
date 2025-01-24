@@ -2,13 +2,13 @@
 import { useState } from "react";
 import { FaPlaneDeparture } from "react-icons/fa";
 
-const DESTINATIONS = ["دبي", "تونس", "تركيا"];
+const LEVELS = ["متقدم", "متوسط", "مبتدأ"];
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
-    username: "",
-    destination: "",
-    date: "",
+    fullName: "",
+    numTel: "",
+    level: "",
   });
   const [status, setStatus] = useState({
     loading: false,
@@ -35,7 +35,7 @@ export default function BookingForm() {
       setStatus({
         loading: false,
         message: data.success
-          ? "تم إرسال اختيارك إلى الموزع!"
+          ? "تم تسجيلك بنجاح , سيتم التواصل معك في أقرب وقت ممكن"
           : "فشل في إرسال اختيارك.",
       });
     } catch (error) {
@@ -54,45 +54,51 @@ export default function BookingForm() {
         className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg space-y-8 transform transition-all duration-500 hover:scale-105"
       >
         <div className="text-center">
-          <FaPlaneDeparture
-            size={40}
-            className="mx-auto text-yellow-500 mb-4"
-          />
-          <h2 className="text-3xl font-extrabold text-gray-800">
-            احجز رحلتك الآن
+          <h2 className="text-3xl font-extrabold text-red-400">
+            عدد المقاعد جد محودود <br />
+            <br /> سجل الآن
           </h2>
-          <p className="text-gray-500">سهولة وأمان في الحجز</p>
+          {/* <p className="text-gray-500">سهولة وأمان في الحجز</p> */}
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 text-gray-500">
           <Input
             type="text"
-            name="username"
-            placeholder="أدخل اسم المستخدم"
-            value={formData.username}
+            name="fullName"
+            placeholder="الاسم و اللقب"
+            value={formData.fullName}
+            onChange={handleChange}
+          />
+          <Input
+            type="text"
+            name="numTel"
+            placeholder="رقم الهاتف"
+            value={formData.numTel}
             onChange={handleChange}
           />
 
           <select
-            name="destination"
-            value={formData.destination}
+            name="level"
+            value={formData.level}
             onChange={handleChange}
-            className="form-input block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white text-right"
+            className="form-input block w-full px-4 py-2 border border-gray-300 rounded-lg 
+            focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white text-right
+            text-gray-500"
           >
-            <option value="">اختر الوجهة</option>
-            {DESTINATIONS.map((dest) => (
+            <option value="">المستوى الحالي</option>
+            {LEVELS.map((dest) => (
               <option key={dest} value={dest}>
                 {dest}
               </option>
             ))}
           </select>
 
-          <Input
+          {/* <Input
             type="date"
             name="date"
             value={formData.date}
             onChange={handleChange}
-          />
+            /> */}
 
           <button
             type="submit"
@@ -113,6 +119,7 @@ export default function BookingForm() {
               {status.message}
             </p>
           )}
+          <img src="/images/flag.png" alt="french Flag" />
         </div>
       </form>
     </div>

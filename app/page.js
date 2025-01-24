@@ -46,20 +46,20 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-400 via-teal-300 to-transparent opacity-50 z-5"></div>
       {/* Navbar and Hero with z-10 to appear above video */}
       <div className="relative z-10">
-        <Navbar />
-        <Hero />
+        {/* <Navbar /> */}
+        {/* <Hero /> */}
       </div>
-      <Services />
-      <section
+      {/* <Services /> */}
+      {/* <section
         id="packages"
         className="container text-center mx-auto py-16 px-6"
-      >
-        <div className="relative inline-block ">
+      > */}
+      {/* <div className="relative inline-block ">
           <h2 className="fustat-offer text-4xl md:text-5xl font-extrabold text-center mb-6 text-white drop-shadow-md">
             أبرز العروض السياحية
           </h2>
           {/* SVG underline */}
-          <svg
+      {/* <svg
             className="absolute left-0 right-0 bottom-0"
             width="100%"
             height="10"
@@ -73,8 +73,8 @@ export default function Home() {
               fill="none"
             />
           </svg>
-        </div>
-        <div className="mt-[4rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>  */}
+      {/* <div className="mt-[4rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
             <PackageCard
               key={index}
@@ -84,15 +84,15 @@ export default function Home() {
               price={pkg.price}
             />
           ))}
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
 
       <section id="contact" className="fustat-offer">
         <div className="container mx-auto p-5">
           <ContactForm />
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
