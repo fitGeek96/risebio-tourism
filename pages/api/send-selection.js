@@ -27,7 +27,7 @@ export default async function handler(req, res) {
 
       let mailOptions = {
         from: process.env.GMAIL_USER,
-        to: "ablasn55@gmail.com", // Replace with distributor's email
+        to: "ablasns19@gmail.com", // Replace with distributor's email
         subject: `Nouvelle Inscription`,
         text: `
         Inscription Details
