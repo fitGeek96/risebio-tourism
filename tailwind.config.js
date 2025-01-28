@@ -24,6 +24,11 @@ module.exports = {
         murrey: "#870058",
         richBlack: "#071F29",
         bleuCiel: "#05a7fa",
+        "french-blue": "#0055A4",
+        "french-blue-dark": "#003366",
+        "french-blue-light": "#4D8EBB",
+        "french-gold": "#C9B037",
+        "french-red": "#EF4135",
       },
     },
     screens: {
